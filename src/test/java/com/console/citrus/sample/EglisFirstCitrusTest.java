@@ -22,6 +22,7 @@ public class EglisFirstCitrusTest extends TestNGCitrusSupport {
     @Parameters("runner")
     public void eglisFirstCitrusTest(@CitrusResource @Optional TestCaseRunner runner) {
         runner.run(echo("TODO: Code the test EglisFirstCitrusTest"));
+        System.out.println("Hello Egli");
 
     }
 }
