@@ -1,8 +1,7 @@
-package com.console.citrus.sample;
+package com.consol.citrus;
 
 import static com.consol.citrus.actions.EchoAction.Builder.echo;
 
-import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
 import com.consol.citrus.testng.TestNGCitrusSupport;
