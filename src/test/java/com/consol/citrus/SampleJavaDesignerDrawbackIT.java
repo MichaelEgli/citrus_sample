@@ -16,6 +16,7 @@ public class SampleJavaDesignerDrawbackIT extends TestNGCitrusSupport {
     public void testLogService()
     {
         System.out.println("Before log called");
+        obj.logs("huhu");
         action(new AbstractTestAction() {
             @Override
             public void doExecute(com.consol.citrus.context.TestContext testContext) {
