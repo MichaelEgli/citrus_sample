@@ -10,11 +10,18 @@ import static com.consol.citrus.actions.EchoAction.Builder.echo;
 @Test
 public class Service_IT extends TestNGCitrusSupport {
 
-    LoggingService obj = new LoggingService();
     @CitrusTest(name = "Service_IT")
     public void serviceTest() {
-        run(echo("Before service call"));
-        obj.logs("Logs will be printed...");
-        run(echo("After  service call"));
+        given(
+                echo("Setup the context")
+        );
+
+        when(
+                echo("Trigger the event")
+        );
+
+        then(
+                echo("Verify the outcome")
+        );
     }
 }
