@@ -3,6 +3,7 @@ package com.consol.citrus;
 import com.consol.citrus.annotations.CitrusTest;
 import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
 import org.testng.annotations.Test;
+import utils.LoggingService;
 
 import static com.consol.citrus.actions.EchoAction.Builder.echo;
 
@@ -13,10 +14,11 @@ import static com.consol.citrus.actions.EchoAction.Builder.echo;
 @Test
 public class SampleJavaRunnerIT extends TestNGCitrusSpringSupport {
 
-
+    LoggingService obj = new LoggingService();
     @CitrusTest
-    public void shouldSendMail() {
-        $(echo("Add 1000+ order and receive mail"));
-
+    public void testLogService() {
+        $(echo("Before log called"));
+        obj.logs("Logs will be printed...");
+        $(echo("After log called"));
     }
 }
