@@ -6,6 +6,7 @@ import com.consol.citrus.testng.TestNGCitrusSupport;
 import utils.LoggingService;
 
 import static com.consol.citrus.actions.EchoAction.Builder.echo;
+import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 
 @Test
 public class Service_IT extends TestNGCitrusSupport {
@@ -13,7 +14,12 @@ public class Service_IT extends TestNGCitrusSupport {
     @CitrusTest(name = "Service_IT")
     public void serviceTest() {
         given(
-                echo("Setup the context")
+                echo("Setup context")
+        );
+
+        given(
+                doFinally()
+                        .actions(echo("Do finally - regardless fo any error before"))
         );
 
         when(
