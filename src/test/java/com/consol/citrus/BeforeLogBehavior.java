@@ -7,6 +7,6 @@ public class BeforeLogBehavior implements TestBehavior {
     public void apply(TestActionRunner runner) {
         runner.run(createVariable("BeforeLog", "test before log"));
 
-        runner.run(echo("beforeBehavior"));
+        runner.run(echo("beforeBehavior execute citrus:currentDate()"));
     }
 }
