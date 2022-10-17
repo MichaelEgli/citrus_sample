@@ -14,11 +14,11 @@ public class SampleVariableDemo extends TestNGCitrusSpringSupport
         variable("email", "egli@test.ch");
         run(echo("Email Variable declared loacally ${email}"));
         run(echo("Global variable ${//project.name//} : -> ${project.name}"));
-        // run(echo("Global variable ${//default.test.author//} : -> ${default.test.author}"));
+
     }
 
     @CitrusTest
     public void testVariable2() {
-        // run(echo("Email Variable declared loacally ${email}"));
+        run(echo("Global variable ${//default.test.author//} : -> ${default.test.author}"));
     }
 }
