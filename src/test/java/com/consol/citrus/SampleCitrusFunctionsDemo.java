@@ -17,4 +17,11 @@ public class SampleCitrusFunctionsDemo extends TestNGCitrusSpringSupport {
         run(echo("citrus:concat('My name is ', ${uname})"));
         run(echo("${uname} has length => citrus:stringLength(${uname})"));
     }
+
+    @CitrusTest
+    public void testNumberFunctions() {
+        run(echo("My name is citrus:maximum(12,0,8)"));
+        run(echo("citrus:sum(1,2,3,4,5,6,7)"));
+        run(echo("citrus:randomNumber(3)"));
+    }
 }
