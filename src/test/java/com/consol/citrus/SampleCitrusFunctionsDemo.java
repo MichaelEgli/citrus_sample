@@ -24,4 +24,11 @@ public class SampleCitrusFunctionsDemo extends TestNGCitrusSpringSupport {
         run(echo("citrus:sum(1,2,3,4,5,6,7)"));
         run(echo("citrus:randomNumber(3)"));
     }
+
+    @CitrusTest
+    public void testJsonFunctions() {
+        variable("person", "{\"name\":\"Michael\",\"city\":\"Wünnewil\"}");
+        run(echo("JSON Object => ${person}"));
+        run(echo("Name => citrus:jsonPath(${person}, '$.name')"));
+    }
 }
